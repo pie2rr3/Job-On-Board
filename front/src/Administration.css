@@ -1,0 +1,78 @@
+@import url("styles.css");
+
+/* reusable table styling */
+table {
+  margin: 2rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  width: 80%;
+  background-color: #fff;
+  text-align: center;
+}
+
+caption {
+  color: #1e40af;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+table th {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  border-bottom: 4px solid #ddd;
+}
+
+table td {
+  padding: 0.5rem;
+  border-bottom: 2px solid #ddd;
+}
+
+table td:first-child {
+  font-weight: bold;
+}
+
+/* styling for the classes */
+
+.content {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+}
+
+.database {
+  width: 100%;
+  height: 100%;
+}
+
+.description-cell {
+  text-align: justify;
+}
+
+.delete-btn {
+  background-color: red;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}

@@ -1,0 +1,84 @@
+@import url("styles.css");
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px 0px 8px 2px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+}
+
+.login {
+  display: block;
+  margin-left: 50%;
+  margin-right: 50%;
+}
+
+.company {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.company h2 {
+  margin-bottom: 15px;
+  color: #024c9b;
+}
+
+.company div {
+  margin-bottom: 10px;
+}
+
+.company div:last-child {
+  margin-bottom: 0;
+}
+
+button {
+  display: inline;
+  justify-content: space-between;
+  margin: 0px 5%;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.buttons button {
+  margin: 0px 5%;
+}
+
+.delete-btn {
+  background-color: red;
+}
+.delete-btn:hover {
+  background-color: darkred;
+}
+

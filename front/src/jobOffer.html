@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="jobOffer.css" />
+    <script defer src="AdminHeader.js"></script>
+    <script src="jobOffer.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../index.html">
+            <img class="icon" src="../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo page" href="jobOffer.html">
+            <img class="icon" src="../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="Company.html">
+              <img class="icon" src="../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo" href="Administration.html">
+              <img class="icon" src="../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="profil.html">
+          <img class="icon" src="../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div class="search-container">
+      <h2>Advanced search</h2>
+      <form id="search-form">
+        <div>
+          <label for="keyword">Keyword :</label>
+          <input type="text" id="keyword" name="keyword" />
+        </div>
+        <div>
+          <label for="salary">Salary</label>
+          <select id="salary" name="salary">
+            <option value="">All</option>
+            <option value="0-1000">0 - 1 000</option>
+            <option value="1000-2000">1 000 - 2 000</option>
+            <option value="2000-3000">2 000 - 3 000</option>
+            <option value="3000-4000">3 000 - 4 000</option>
+            <option value="4000-5000">4 000 - 5 000</option>
+            <option value="5000-6000">5 000 - 6 000</option>
+            <option value="6000-7000">6000 - 7000</option>
+            <option value="7000-8000">7 000 - 8 000</option>
+            <option value="8000-9000">8 000 - 9 000</option>
+            <option value="9000-10000">9 000 - 10 000</option>
+            <option value="10000">10 000 et plus</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="work-time">Work time</label>
+          <select id="work-time" name="work-time">
+            <option value="">All</option>
+            <option value="FULL_TIME">Full time</option>
+            <option value="PART_TIME">Part time</option>
+            <option value="REMOTE">Remote</option>
+          </select>
+        </div>
+        <div>
+          <label for="distance">Department</label>
+          <input type="number" id="distance" name="distance" min="1" max="95"/>
+        </div>
+        <div>
+          <input type="submit" value="Rechercher" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

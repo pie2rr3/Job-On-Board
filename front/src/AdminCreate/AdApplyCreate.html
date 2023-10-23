@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Create.css" />
+    <script defer src="../AdminHeader.js"></script>
+    <script defer src="AdApplyCreate.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../../index.html">
+            <img class="icon" src="../../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="../jobOffer.html">
+            <img class="icon" src="../../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="../Company.html">
+              <img class="icon" src="../../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo page" href="../Administration.html">
+              <img class="icon" src="../../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="../profil.html">
+          <img class="icon" src="../../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div id="EmptyView" class="hidden">You should not be there</div>
+    <div id="AdView" class="hidden container">
+      <div class="form-group">
+        <label for="id">Id :</label>
+        <input type="number" id="id" />
+      </div>
+      <div class="form-group">
+        <label for="message">Message :</label>
+        <input type="text" id="message" />
+      </div>
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" name="status">
+          <option value="PENDING">PENDING</option>
+          <option value="ACCEPTED">ACCEPTED</option>
+          <option value="REJECTED">REJECTED</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="advertisementId">Advertisement Id :</label>
+        <input type="number" id="advertisementId" />
+      </div>
+      <div class="form-group">
+        <label for="applicantId">Applicant Id :</label>
+        <input type="number" id="applicantId" />
+      </div>
+
+      <button class="upload" onclick="save()">Save</button>
+      <button onclick="cancel()">Cancel</button>
+    </div>
+  </body>
+</html>

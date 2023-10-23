@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Company.css" />
+    <script defer src="AdminHeader.js"></script>
+    <script defer src="Company.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../index.html">
+            <img class="icon" src="../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="jobOffer.html">
+            <img class="icon" src="../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo page" href="Company.html">
+              <img class="icon" src="../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo" href="Administration.html">
+              <img class="icon" src="../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="profil.html">
+          <img class="icon" src="../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div id="Userloged">
+      <div id="LoginCompany" class="container">
+        <div class="company">
+          <div class="form-group">
+            <label for="loginname">Name :</label>
+            <input type="email" id="loginname" />
+          </div>
+          <div class="form-group">
+            <label for="loginpassword">Password :</label>
+            <input type="password" id="loginpassword" />
+          </div>
+          <button class="upload" id="boutoncheck" onclick="checkCompany()">
+            Connexion
+          </button>
+          <button
+            id="boutonInscription"
+            onclick="onClickToggle('CreatCompany','LoginCompany')"
+          >
+            Create Company
+          </button>
+        </div>
+      </div>
+
+      <div id="CreatCompany" class="hidden">
+        <div class="company">
+          <div class="container">
+            <div class="form-group">
+              <label for="name">Name :</label>
+              <input type="text" id="name" />
+            </div>
+            <div class="form-group">
+              <label for="departement">Department :</label>
+              <input type="number" id="departement" min="1" max="95" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password :</label>
+              <input type="password" id="password" />
+            </div>
+            <div class="form-group">
+              <button
+                id="boutoncheck"
+                onclick="onClickToggle('LoginCompany','CreatCompany')"
+              >
+                Login
+              </button>
+              <button class="upload" id="boutoncreat" onclick="submitCompany()">
+                Create Company
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="company" class="hidden container">
+        <div class="company">
+          <h2>Company</h2>
+          <div id="companyName"></div>
+          <div id="companyDepartement"></div>
+          <div class="buttons">
+            <button
+              id="boutonUpdate"
+              onclick="onClickUpdate('companyupdate','company')"
+            >
+              Update
+            </button>
+            <button id="boutonDisconnect" onclick="onClickDisconnectCompany()">
+              Disconnect
+            </button>
+            <button class="upload" id="boutonDelete" onclick="confirmDelete()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="companyupdate" class="hidden container">
+        <div class="company">
+          <h2>Company</h2>
+          <div class="container">
+            <div class="form-group">
+              <label for="updatename">Name :</label>
+              <input type="text" id="updatename" />
+            </div>
+            <div class="form-group">
+              <label for="updateDepartement">Department :</label>
+              <input type="number" id="updateDepartement" min="1" max="95" />
+            </div>
+            <div class="buttons">
+              <button
+                class="upload"
+                id="boutonUpdate"
+                onclick="updateCompany()"
+              >
+                Update
+              </button>
+              <button
+                id="boutonDelete"
+                onclick="onClickToggle('company','companyupdate')"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="buttonCreateAds" class="hidden">
+        <button
+          id="boutonCreat"
+          onclick="onClickToggle('CreateAds', 'buttonCreateAds')"
+        >
+          Create Advertisement
+        </button>
+      </div>
+      <div id="CreateAds" class="hidden">
+        <div class="container">
+          <div class="form-group">
+            <label for="title">Title :</label>
+            <input type="text" id="title" />
+          </div>
+          <div class="form-group">
+            <label for="shortDescription">Short description :</label>
+            <input type="text" id="shortDescription" />
+          </div>
+          <div class="form-group">
+            <label for="fullDescription">Full description :</label>
+            <input type="text" id="fullDescription" />
+          </div>
+          <div class="form-group">
+            <label for="wage">Wage :</label>
+            <input type="number" id="wage" />
+          </div>
+          <div class="form-group">
+            <label for="department">Department :</label>
+            <input type="number" id="department" min="1" max="95" />
+          </div>
+          <div class="form-group">
+            <label for="place">Working Place :</label>
+            <input type="text" id="place" />
+          </div>
+          <div class="form-group">
+            <label for="work-time">Work time</label>
+            <select id="work-time" name="work-time">
+              <option value="FULL_TIME">Full time</option>
+              <option value="PART_TIME">Part time</option>
+              <option value="REMOTE">Remote</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button
+              id="boutoncheck"
+              onclick="onClickCreate('buttonCreateAds','CreateAds')"
+            >
+              Create
+            </button>
+            <button
+              class="upload"
+              id="boutoncreat"
+              onclick="onClickToggle('buttonCreateAds','CreateAds')"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="companyApplicationsContainer"></div>
+  </body>
+</html>

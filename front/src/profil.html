@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="profil.css" />
+    <script defer src="AdminHeader.js"></script>
+    <script defer src="Profil.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../index.html">
+            <img class="icon" src="../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="jobOffer.html">
+            <img class="icon" src="../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="Company.html">
+              <img class="icon" src="../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo" href="Administration.html">
+              <img class="icon" src="../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo page" href="profil.html">
+          <img class="icon" src="../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div id="LoginUser" class="container">
+      <div class="profil">
+        <div class="form-group">
+          <label for="loginemail">Email :</label>
+          <input type="email" id="loginemail" />
+        </div>
+        <div class="form-group">
+          <label for="loginpassword">Password :</label>
+          <input type="password" id="loginpassword" />
+        </div>
+        <button class="upload" id="boutoncheck" onclick="CheckUser()">
+          Login
+        </button>
+        <button
+          id="boutonInscription"
+          onclick="onClickToggle('CreatUser','LoginUser')"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+
+    <div id="CreatUser" class="hidden">
+      <div class="profil">
+        <div class="container">
+          <div class="form-group">
+            <label for="name">Name :</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email :</label>
+            <input type="email" id="email" />
+          </div>
+          <div class="form-group">
+            <label for="departement">Department :</label>
+            <input type="number" id="departement" min="1" max="95" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone :</label>
+            <input type="text" id="phone" />
+          </div>
+          <div class="form-group">
+            <label for="password">Password :</label>
+            <input type="password" id="password" />
+          </div>
+          <div class="form-group">
+            <button
+              id="boutoncheck"
+              onclick="onClickToggle('LoginUser','CreatUser')"
+            >
+              Login
+            </button>
+            <button class="upload" id="boutoncreat" onclick="submitUser()">
+              Create User
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="profil" class="hidden container">
+      <div class="profil">
+        <h2>Profile</h2>
+        <div id="profileName"></div>
+        <div id="profileEmail"></div>
+        <div id="profileDepartement"></div>
+        <div id="profilePhone"></div>
+        <div id="profileCompany"></div>
+        <div id="profileRole"></div>
+        <div class="buttons">
+          <button
+            id="boutonUpdate"
+            onclick="onClickUpdate('profilupdate','profil')"
+          >
+            Edit
+          </button>
+          <button id="boutonDisconnect" onclick="onClickDisconnect()">
+            Disconnect
+          </button>
+          <button class="upload" id="boutonDelete" onclick="confirmDelete()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="profilupdate" class="hidden container">
+      <div class="profil">
+        <h2>Profile</h2>
+        <div class="container">
+          <div class="form-group">
+            <label for="updatename">Name :</label>
+            <input type="text" id="updatename" />
+          </div>
+          <div class="form-group">
+            <label for="updateDepartement">Department :</label>
+            <input type="number" id="updateDepartement" min="1" max="95" />
+          </div>
+          <div class="form-group">
+            <label for="updateemail">Email :</label>
+            <input type="email" id="updateemail" />
+          </div>
+          <div class="form-group">
+            <label for="updatephone">Phone :</label>
+            <input type="text" id="updatephone" />
+          </div>
+          <div class="buttons">
+            <button class="upload" id="boutonUpdate" onclick="updateUser()">
+              Save
+            </button>
+            <button
+              id="boutonDelete"
+              onclick="onClickToggle('profil','profilupdate')"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="userApplicationsContainer"></div>
+  </body>
+</html>

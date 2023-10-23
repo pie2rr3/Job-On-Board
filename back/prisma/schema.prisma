@@ -1,0 +1,89 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          Int     @id @default(autoincrement())
+  email       String  @unique
+  name        String?
+  phone       String?
+  password    String
+  departement Int?
+  role        Role    @default(USER)
+
+  companyId Int?
+  company   Company? @relation(fields: [companyId], references: [id], onDelete: SetNull)
+
+  advertisements           Advertisement[]
+  AdvertisementApplication AdvertisementApplication[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Advertisement {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title            String  @db.VarChar(255)
+  shortDescription String?
+  fullDescription  String
+
+  wage        Int
+  place       String?
+  departement Int
+  workTime    WorkTime
+
+  authorId Int?
+  author   User? @relation(fields: [authorId], references: [id])
+
+  companyId Int
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+
+  AdvertisementApplication AdvertisementApplication[]
+}
+
+enum WorkTime {
+  FULL_TIME
+  PART_TIME
+  REMOTE
+}
+
+model Company {
+  id          Int    @id @default(autoincrement())
+  name        String @unique @db.VarChar(255)
+  departement Int
+  password    String
+
+  Advertisement Advertisement[]
+  Users         User[]
+}
+
+model AdvertisementApplication {
+  id Int @id @default(autoincrement())
+
+  createdAt DateTime          @default(now())
+  status    ApplicationStatus
+  message   String
+
+  advertisementId Int
+  Advertisement   Advertisement @relation(fields: [advertisementId], references: [id], onDelete: Cascade)
+
+  applicantId Int
+  applicant   User @relation(fields: [applicantId], references: [id])
+}
+
+enum ApplicationStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Administration.css" />
+    <script defer src="AdminHeader.js"></script>
+    <script defer src="Administration.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../index.html">
+            <img class="icon" src="../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="jobOffer.html">
+            <img class="icon" src="../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="Company.html">
+              <img class="icon" src="../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo page" href="Administration.html">
+              <img class="icon" src="../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="profil.html">
+          <img class="icon" src="../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div id="Admin">
+      <h1>Manage the Database from Here!</h1>
+      <table>
+        <caption>
+          Users
+          <button onclick="createUser()">Create</button>
+        </caption>
+
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Departement</th>
+            <th>Role</th>
+            <th>Company Name</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="userList"></tbody>
+      </table>
+      <table>
+        <caption>
+          Company
+          <button onclick="createCompany()">Create</button>
+        </caption>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Departement</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="companyList"></tbody>
+      </table>
+      <table>
+        <caption>
+          Advertisements
+          <button onclick="createAdvertisement()">Create</button>
+        </caption>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>AuthorId</th>
+            <th>CompanyId</th>
+            <th>Title</th>
+            <th>shortDescription</th>
+            <th>fullDescription</th>
+            <th>wage</th>
+            <th>Departement</th>
+            <th>workTime</th>
+            <th>Place</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="adsList"></tbody>
+      </table>
+      <table>
+        <caption>
+          AdvertisementApplication
+          <button onclick="createAdvertisementApply()">Create</button>
+        </caption>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Advertisement Id</th>
+            <th>Applicant Id</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="adsApplyList"></tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/x-icon" href="../../images/favicon.png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Details.css" />
+    <script defer src="../AdminHeader.js"></script>
+    <script defer src="AdDetails.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo" href="../../index.html">
+            <img class="icon" src="../../images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="../jobOffer.html">
+            <img class="icon" src="../../images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="../Company.html">
+              <img class="icon" src="../../images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo page" href="../Administration.html">
+              <img class="icon" src="../../images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="../profil.html">
+          <img class="icon" src="../../images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div id="EmptyView" class="hidden">You should not be there</div>
+    <div id="AdView" class="hidden container">
+      <div class="form-group">
+        <label for="id">Id :</label>
+        <input type="number" id="id" />
+      </div>
+      <div class="form-group">
+        <label for="title">Title :</label>
+        <input type="text" id="title" />
+      </div>
+      <div class="form-group">
+        <label for="shortDescription">Short description :</label>
+        <input type="text" id="shortDescription" />
+      </div>
+      <div class="form-group">
+        <label for="fullDescription">Full description :</label>
+        <input type="text" id="fullDescription" />
+      </div>
+      <div class="form-group">
+        <label for="wage">Wage :</label>
+        <input type="number" id="wage" />
+      </div>
+      <div class="form-group">
+        <label for="department">Department :</label>
+        <input type="number" id="department" min="1" max="95" />
+      </div>
+      <div class="form-group">
+        <label for="place">Working Place :</label>
+        <input type="text" id="place" />
+      </div>
+      <div class="form-group">
+        <label for="work-time">Work time</label>
+        <select id="work-time" name="work-time">
+          <option value="FULL_TIME">Full time</option>
+          <option value="PART_TIME">Part time</option>
+          <option value="REMOTE">Remote</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="companyId">Company Id :</label>
+        <input type="number" id="companyId" />
+      </div>
+      <div class="form-group">
+        <label for="authorId">Author Id :</label>
+        <input type="number" id="authorId" />
+      </div>
+      <div class="form-group">
+        <label for="createdAt">Created at :</label>
+        <input type="text" id="createdAt" />
+      </div>
+      <div class="form-group">
+        <label for="updatedAt">Updated at :</label>
+        <input type="text" id="updatedAt" />
+      </div>
+
+      <button class="upload" onclick="save()">Save</button>
+      <button onclick="cancel()">Cancel</button>
+    </div>
+  </body>
+</html>

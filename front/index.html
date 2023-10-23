@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script defer src="./src/AdminHeader.js"></script>
+    <script src="index.js"></script>
+    <title>Job Advertisements</title>
+  </head>
+  <body class="content">
+    <header>
+      <div class="menu">
+        <h1>Job On Board</h1>
+        <div class="logo_container">
+          <a class="logo page" href="./index.html">
+            <img class="icon" src="images/home.png" />
+            <span>Home</span>
+          </a>
+          <a class="logo" href="./src/jobOffer.html">
+            <img class="icon" src="images/job_offer.png" />
+            <span>Job Offer</span>
+          </a>
+          <div id="userloged" class="hidden">
+            <a class="logo" href="./src/Company.html">
+              <img class="icon" src="images/company.png" />
+              <span>Company</span>
+            </a>
+          </div>
+          <div id="admin" class="hidden">
+            <a class="logo" href="./src/Administration.html">
+              <img class="icon" src="images/Admin.png" />
+              <span>Administration</span>
+            </a>
+          </div>
+        </div>
+        <a class="logo" href="./src/profil.html">
+          <img class="icon" src="images/profile.png" />
+          <span>Profile</span>
+        </a>
+      </div>
+    </header>
+    <div class="accueil">
+      <img src="images/JOB.png" alt="Job On Board" />
+      <button onclick="window.location.href='./src/jobOffer.html'">
+        Search for your dream job
+      </button>
+    </div>
+
+    <div class="ads-container"></div>
+
+    <div class="about" id="about-container">
+      <h2>About Us</h2>
+      <p>
+        Welcome to Job On Board, your one-stop destination for job
+        opportunities. We are committed to helping you find your dream job.
+      </p>
+    </div>
+  </body>
+</html>

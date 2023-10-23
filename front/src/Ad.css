@@ -1,0 +1,37 @@
+@import url("styles.css");
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 8px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px 0px 8px 2px;
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.upload {
+  background-color: red;
+}
+.upload:hover {
+  background-color: darkred;
+}
